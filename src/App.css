@@ -1,16 +1,71 @@
 .nav {
+    background-color: aliceblue;
+    border: solid whitesmoke;
+    border-radius: 40px;
     padding-top: 5px;
     display: flex;
-    justify-content: space-between;
 }
-.nav-links{
-    width: 50%;
+
+.l-logo{
+    width: 44%;
+    justify-content: right;
+}
+.logo{
     display: flex;
+    text-align: right;
     
 }
-.nav a img {
+.logo img{
     width: 60px;
     height: 60px;
     border-radius: 16px;
     
 }
+.img-b{
+    mix-blend-mode: multiply;
+}
+
+.user-selc{
+    position: relative;
+    top:40%;
+    left: 40%;
+}
+.comp-selc {
+    position: relative;
+    top:40%;
+    left:45%;
+}
+
+.paper-i{
+    mix-blend-mode: multiply;
+}
+
+.shake{
+    animation-name:shake;
+    animation-duration:1s;
+    animation-iteration-count: 3;
+    animation-timing-function: linear;
+    animation-delay:1s;
+    }
+    @keyframes shake{
+    from{
+    transform:rotate(15deg);
+    }
+    to{
+      transform:rotate(-15deg);
+      transform-origin:center center;
+
+    }
+   
+    
+    }
+    .Footer{
+        position: fixed;
+        border-radius: 5px;
+        border: 2px solid #CCC;
+    }
+    .name{
+        position: absolute;
+        bottom: 30%;
+        left:47%;
+    }
