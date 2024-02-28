@@ -1,11 +1,10 @@
 export const  Footer= () =>{
-    return (<div className="Footer w-[100%] h-[60px] bg-yellow-500 mt-[120px] ">
+    
+    return (<footer className="Footer  bg-yellow-500 flex justify-center items-center">
 
-        <p className="name  text-gray-50 font-bold">
-            Aman Sharma
-        </p>
+        <p className=" text-slate-100 font-extrabold text-center ">Aman Sharma</p>
 
 
-    </div>)
+    </footer>)
 
 }
