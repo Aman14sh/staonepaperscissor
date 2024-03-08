@@ -10,6 +10,10 @@ export const UI = () => {
   var [scoreUser,setScore]=useState(0);
   var [scoreComp,setComp]=useState(0);
   function handleClick(e: React.MouseEvent<HTMLImageElement>){
+    if(!play){
+      alert('Click on Play');
+      return;
+    }
     setIsStart(false);
     setTimeout(()=>{
      setIsStart(true);
@@ -93,7 +97,7 @@ export const UI = () => {
     <>
     <div className='score flex justify-between '>
 
-      <div className='user flex items-center justify-center w-[100px] h-[100px] ml-[60px] mt-[20px]'>
+      <div className='user flex items-center justify-center w-[100px] h-[100px] ml-[60px] mt-[20px] sm:mr-[30px] lg:mr-[200px] md:mr-[200px] mt-[20px]'>
         <img className='w-[50px] ' 
         src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFwAAABcCAMAAADUMSJqAAAAY1BMVEX///8AAADNzc29vb2Pj4/5+fnr6+vi4uJjY2Orq6v09PRvb29BQUGwsLBXV1c8PDwlJSUeHh7V1dWFhYV3d3eenp7b29uWlpY1NTVeXl4wMDCkpKQqKioJCQnFxcV9fX0TExPWIA0tAAACtElEQVRoge1Z2dqqMAzUtiyCIMgiCOL//k95lFIoS0tS5OZ8zCVNx5ImkwRPpwMHDkhwSENpQ5xf81qEXc89roxYP6N2kud5gmfymxdw3Ckzh7ud3mLL1F+wjc65zxwycs59C/dFYip8dqH0wvxCengx5x5ccq3s4bFdDaHDTLkTwVCS6RIpxVpixp2J/XRplYrVzIRb7HYVMWG5ut/Ww15/beE2W22iQAi4sO7CQyx3wPelequUWwU4biviEbhmx2MywqVqlz2r8uGY5BLPwse6IXd7geEm7ZbYW7f04tZ0lmUavOGpzbB5atXw+OX5UMOvlF/TDWZcwK6+R4ARjQwZ6jyvgZXgjnR6iJEMGykBtzbtAIH4hRchLuiDGmXeHqUGk0cgXRFo9SXCkeNODiff1ee7RgvDxDmB61CLXTMUpS03pLbsqop4PX/DufetRPAa+sDX0H2rv8XfFti3xMgRo2tDfb2Vz63QreieveK+Xe7QnysC0tvQnw+TRbw8WcTdstFkIc1E4XwmCsWa4Uy07zQ3nkNrMYfW0sMNc+in44nOGsSbJugPSjV3uY3Zzq5q7s9NZAYh3iH3dcwcvplncsV3lincHE3tpWOKOPRZFVAaVMwP4/FaCuxwBIKXtLlIqDMSVcuhifxh5IUZRD0pRGKmqBgOk16gBB+eSJsanWEjXQuwivafQs7haijce42BCdi7dzXoMKR3PqC96GMbUPo5HmLHSk08nYQXn4jozcXhXb2dOLePq+c+5OwJ1iUCwjWa0iHk20ClV7fm5twDu+KuvL8N3D3733Kupqtu06O7sMXPYhQUTjp0YbzUiXAdhPTkKnS9+mu+8kDpzzKIKpDLbQ7n4G6fF+5Wr7CN9hS8rZ8rmPd9rFVvCJovy8K1eUH1g39QnCrYEBIHDhz4X/APZa8Y/vZS8k0AAAAASUVORK5CYII='
         
@@ -112,7 +116,7 @@ export const UI = () => {
     </div>
 <div className='play-area flex w-[100%] h-[300px]'>
 
-<div className='user-selc lg:w-[80px] lg:h-[120px] md:w-[120px] md:h-[120px] sm:w-[80px] sm:h-[80px]  border rounded-lg'>
+<div className='user-selc lg:w-[120px] lg:h-[120px] md:w-[120px] md:h-[120px] sm:w-[80px] sm:h-[80px]  border rounded-lg'>
 {IsStart ? <img className="w-[100%] " src={player_choice} alt=""/>:<img  className="shake w-[100%]  " src="https://bnz06pap001files.storage.live.com/y4mtj73i15WA3DZAngc_DD1AugJ_k6IClMTeBwfHq54kjeJMrmEg3M14zAHMIABqjwepIW2UexQlY4pzCsikBuZ8T8eXeAcKgFxZWgmujrb5HJb--M5mL4_gLezCuifzMIOMwSqrRRrx_BVakxSZJXF4kExk-eLPzE3cyuerVdp4_3Z9xKHF6U4Dq_7ClUsWxVnFn8SwK9UgilDAbYSSkfEeg?encodeFailures=1&width=224&height=236" alt="" /> }
 
 
@@ -137,7 +141,7 @@ export const UI = () => {
       </div>
       <div className='flex items-cnenter justify-center w[120px] '>
        {play ? <button className='w-[180px] text-white bg-slate-500 border rounded-lg mt-[5px]'>Select One!</button>
-       :<button className='w-[190px] text-white bg-yellow-500 border rounded-lg mt-[5px]' >Play</button>}
+       :<button className='w-[190px] text-white bg-yellow-500 border rounded-lg mt-[5px]' onClick={()=>{setPlay(true)}} >Play</button>}
       </div>
     </div>
     </>
